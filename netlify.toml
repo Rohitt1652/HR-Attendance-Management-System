@@ -1,0 +1,8 @@
+# Netlify configuration for WorkforceOS Frontend
+[build]
+  base = "nextjs-frontend"
+  publish = ".next"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
