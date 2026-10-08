@@ -107,13 +107,12 @@ app.use((req, res) => {
 });
 
 // Global error handler
-// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   console.error(err.stack);
   const status = err.status || err.statusCode || 500;
-  const message = process.env.NODE_ENV === 'production'
-    ? 'Internal server error'
-    : err.message || 'Internal server error';
+  const message = status < 500
+    ? err.message
+    : (process.env.NODE_ENV === 'production' ? 'Internal server error' : err.message || 'Internal server error');
   res.status(status).json({ success: false, message });
 });
 
