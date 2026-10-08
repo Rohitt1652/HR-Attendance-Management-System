@@ -1,0 +1,15 @@
+{
+  "name": "workforceos-portal",
+  "version": "1.0.0",
+  "description": "WorkforceOS - Smart HR & Attendance Management Portal",
+  "scripts": {
+    "start": "npm start --prefix backend",
+    "build": "echo 'Root build - use nextjs-frontend directory for Vercel'",
+    "backend": "npm run dev --prefix backend",
+    "seed": "npm run seed --prefix backend",
+    "frontend": "npm run dev --prefix nextjs-frontend -- --port 3000",
+    "install:all": "npm install --prefix backend && npm install --prefix nextjs-frontend",
+    "test": "npm test --prefix backend && npm test --prefix nextjs-frontend"
+  },
+  "private": true
+}

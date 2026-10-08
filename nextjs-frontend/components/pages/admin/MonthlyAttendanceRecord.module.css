@@ -1,0 +1,48 @@
+/* MonthlyAttendanceRecord.module.css */
+
+.pageTitle {
+  font-size: 1.25rem;
+}
+
+.pageSubtitle {
+  margin-top: 4px;
+}
+
+.btnDownload {
+  padding: 0.5rem 1rem;
+  background: #22c55e;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.selectFilter {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.btnSubmit {
+  padding: 0.5rem 1.25rem;
+  background: #6366f1;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.tableShell {
+  border-radius: 14px;
+  overflow: auto;
+  max-height: calc(100vh - 280px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}

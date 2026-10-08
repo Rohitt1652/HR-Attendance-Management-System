@@ -1,0 +1,724 @@
+/* AdminDashboard.module.css */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Hero Decorative Composition (Right Side) */
+.heroDecorationContainer {
+  position: relative;
+  width: 140px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .heroDecorationContainer {
+    display: none;
+  }
+}
+
+.heroIconBadgeMain {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.heroIconBadgeSubLeft {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.heroIconBadgeSubRight {
+  position: absolute;
+  right: 6px;
+  bottom: 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Quick Action Links Bar (Top) */
+.topQuickActionsBar {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.625rem 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  flex-wrap: wrap;
+}
+
+.topQuickActionChip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.875rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.topQuickActionChip:hover {
+  background: #eff6ff;
+  border-color: #c7d2fe;
+  transform: translateY(-1px);
+}
+
+.quickActionsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+
+/* Stat Cards */
+.statCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .statCardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .statCardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  background: #ffffff;
+  border-radius: 16px;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 1.375rem;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: block;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-align: left;
+  overflow: hidden;
+}
+
+.statCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 0.25rem;
+}
+
+.statVal {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: 2.5rem;
+  color: #0f172a;
+  line-height: 1;
+}
+
+/* 3-Column Main Content Layout */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.8fr;
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pendingLeavesList {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 0.625rem;
+  overflow-y: auto;
+}
+
+.viewMoreLink {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #6366f1;
+  padding: 0.5rem;
+  text-decoration: none;
+  background: #eff6ff;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Bottom Grid Layout (3 Columns) */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.celebrateBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.cafeMenuList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.cafePriceTag {
+  font-size: 0.78rem;
+  color: #6366f1;
+  margin-left: 0.5rem;
+}
+
+.announcementsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+/* Operational 2-Column Grid & Breakdown Styles */
+.operationalGrid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.rightColumnStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .twoColumnGrid,
+  .operationalGrid,
+  .secondaryGrid,
+  .contextGrid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+.attentionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.875rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.attentionRow:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateX(2px);
+}
+
+.attentionRowMuted {
+  opacity: 0.65;
+  background: #fafafa;
+  border-color: #f1f5f9;
+}
+
+.attentionBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.attendanceBreakdownGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .attendanceBreakdownGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.attendanceBreakdownRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.875rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.holidaysGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+  .holidaysGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .holidaysGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dataReadinessBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  color: #92400e;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.quickActionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .quickActionsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Compact Bottom Utility Section (Birthday Status + Quick Actions) */
+.utilityBar {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 1.25rem;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.875rem 1.25rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 1024px) {
+  .utilityBar {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+}
+
+.utilityBirthdaySection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.875rem;
+  border-radius: 10px;
+}
+
+.utilityQuickActionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.utilityQuickActionsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quickActionsFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.quickActionChip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.quickActionChip:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.celebrateBtnCompact {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0.375rem 0.75rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  flex-shrink: 0;
+}
+
+/* Celebration Spotlight Birthday Banner (Target Reference Exact Match) */
+.birthdaySpotlightBanner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #f6eeff 0%, #ece0ff 38%, #f8ebff 72%, #ebe0ff 100%);
+  border: 1.5px solid #e0cdfe;
+  border-radius: 20px;
+  padding: 0.95rem 1.85rem;
+  box-shadow: 0 10px 30px -4px rgba(147, 51, 234, 0.12), 0 3px 8px -2px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  min-height: 100px;
+}
+
+/* Floating Confetti Layering */
+.spotlightConfettiLeft {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%) scale(0.95) rotate(-5deg);
+  height: 120%;
+  width: auto;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.spotlightConfettiRight {
+  position: absolute;
+  top: 50%;
+  right: 210px;
+  transform: translateY(-50%) scale(0.85) rotate(10deg);
+  height: 115%;
+  width: auto;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.spotlightLeftGroup {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.cakeWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cakeGlow {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216, 180, 254, 0.65) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+/* Standalone Cake Image Artwork (Main Illustration - 10-15% size increase) */
+.spotlightCakeImage {
+  position: relative;
+  width: 98px;
+  height: auto;
+  max-height: 94px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 14px rgba(147, 51, 234, 0.28));
+  transition: transform 0.25s ease;
+}
+
+.birthdaySpotlightBanner:hover .spotlightCakeImage {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.verticalDivider {
+  width: 1.5px;
+  height: 54px;
+  background: rgba(192, 160, 252, 0.45);
+  margin: 0 1.6rem 0 1.25rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+}
+
+.spotlightInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spotlightTag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b21a8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.spotlightNames {
+  font-size: 1.35rem;
+  font-weight: 850;
+  color: #4c1d95;
+  margin: 0;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+}
+
+.spotlightSubtext {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b21a8;
+  opacity: 0.9;
+  margin: 3px 0 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.spotlightRightGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  z-index: 1;
+}
+
+.spotlightProfiles {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.miniProfileWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.miniProfileDivider {
+  width: 1px;
+  height: 36px;
+  background: rgba(192, 160, 252, 0.4);
+}
+
+/* Clean Initials Circles for Employee Avatars */
+.miniProfileItem {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.miniProfileAvatarCircle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.22);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.miniProfileText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.miniProfileName {
+  font-size: 0.88rem;
+  font-weight: 750;
+  color: #2e1065;
+  white-space: nowrap;
+}
+
+.miniProfileDesignation {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b21a8;
+  opacity: 0.85;
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.moreProfilesBadge {
+  font-size: 0.75rem;
+  font-weight: 750;
+  color: #6b21a8;
+  background: rgba(243, 232, 255, 0.9);
+  border: 1px solid #d8b4fe;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.spotlightCelebrateBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 750;
+  color: #ffffff;
+  padding: 0.65rem 1.35rem;
+  background: linear-gradient(135deg, #7c3aed 0%, #651fff 100%);
+  border: none;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  box-shadow: 0 6px 20px -2px rgba(124, 58, 237, 0.42);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 46px;
+}
+
+.spotlightCelebrateBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -2px rgba(124, 58, 237, 0.55);
+  background: linear-gradient(135deg, #6d28d9 0%, #536dfe 100%);
+}
+
+@media (max-width: 1100px) {
+  .spotlightConfettiLeft, .spotlightConfettiRight {
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 900px) {
+  .spotlightConfettiLeft, .spotlightConfettiRight {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .birthdaySpotlightBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .spotlightRightGroup {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .verticalDivider {
+    display: none;
+  }
+}
+
+
+
+
+
+

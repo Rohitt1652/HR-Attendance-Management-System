@@ -1,0 +1,208 @@
+/* Transparent Celebration Layer Container */
+.celebrationLayer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.7s ease-out;
+}
+
+.layerFadeOut {
+  opacity: 0;
+}
+
+/* Layer 1: Balloons */
+.balloonLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.balloonWrapper {
+  position: absolute;
+  bottom: -60px;
+  animation: floatUp 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-115vh) translateX(var(--drift-x, 20px));
+    opacity: 0;
+  }
+}
+
+.balloonSvg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
+}
+
+/* Layer 2: Confetti */
+.confettiLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confettiParticle {
+  position: absolute;
+  top: -20px;
+  animation: confettiFall 4.5s ease-out infinite;
+  will-change: transform, opacity;
+}
+
+.rect {
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.strip {
+  width: 6px;
+  height: 18px;
+  border-radius: 1px;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(var(--start-rotate, 0deg));
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(105vh) rotate(calc(var(--start-rotate, 0deg) + 360deg));
+    opacity: 0;
+  }
+}
+
+/* Layer 3: Spark Bursts */
+.sparkLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sparkBurst {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  animation: burstExpand 0.8s ease-out forwards;
+}
+
+@keyframes burstExpand {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Centered Birthday Message Card */
+.messageCardWrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  pointer-events: none;
+}
+
+.messageCard {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(216, 180, 254, 0.7);
+  border-radius: 24px;
+  padding: 1.75rem 2.5rem;
+  text-align: center;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.18), 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: messagePopIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes messagePopIn {
+  0% {
+    transform: scale(0.85) translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f3e8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.85rem;
+}
+
+.greetingTitle {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.greetingSubtitle {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Prefers Reduced Motion Media Query */
+@media (prefers-reduced-motion: reduce) {
+  .balloonLayer,
+  .confettiLayer,
+  .sparkLayer {
+    display: none !important;
+  }
+  .celebrationLayer {
+    transition: opacity 0.4s ease-out;
+  }
+  .messageCard {
+    animation: messageFadeIn 0.3s ease-out forwards;
+  }
+  @keyframes messageFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}

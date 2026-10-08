@@ -1,0 +1,706 @@
+/* BookLunchPage.module.css */
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.orderSectionCard {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.orderSectionHeader {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.headerTitle {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.badgeItems {
+  background: #6366f1;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 1px 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.btnClearCart {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.72rem;
+  transition: color 0.15s ease;
+}
+
+.btnClearCart:hover {
+  color: #ef4444;
+}
+
+.emptyState {
+  padding: 2.5rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.emptyStateIcon {
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.emptyStateText {
+  font-size: 0.82rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.emptyStateSubtext {
+  font-size: 0.72rem;
+  margin: 4px 0 0;
+  color: #cbd5e1;
+}
+
+.cartBody {
+  padding: 1rem 1.25rem;
+}
+
+.cartItemRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.cartItemRow:last-child {
+  border-bottom: none;
+}
+
+.cartItemQty {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  min-width: 22px;
+}
+
+.cartItemDetails {
+  flex: 1;
+  min-width: 0;
+}
+
+.cartItemName {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.cartItemSubtext {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.cartItemPrice {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #1e293b;
+}
+
+.notesInput {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.625rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  color: #374151;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.notesInput:focus {
+  border-color: #6366f1;
+}
+
+.summaryContainer {
+  margin-top: 0.875rem;
+  padding-top: 0.875rem;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.summaryTotalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.summaryTotalVal {
+  color: #6366f1;
+}
+
+.bookingDateCalendarIcon {
+  font-size: 0.9rem;
+}
+
+.bookingCloseLabel {
+  text-align: center;
+  font-size: 0.62rem;
+  color: #94a3b8;
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.quickReorderHeader {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.quickReorderTitle {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.quickReorderBtn {
+  color: #6366f1;
+  font-size: 0.72rem;
+}
+
+.quickReorderBody {
+  padding: 1rem 1.25rem;
+  gap: 10px;
+}
+
+.quickReorderEmpty {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.quickReorderItem {
+  gap: 10px;
+  padding: 0.625rem 0.875rem;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+}
+
+.quickReorderIconBox {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #eef2ff;
+}
+
+.quickReorderAddBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid #6366f1;
+  background: #ffffff;
+  color: #6366f1;
+  transition: all 0.15s ease;
+}
+
+.quickReorderAddBtn:hover {
+  background: #6366f1;
+  color: #ffffff;
+}
+
+/* My Orders Card */
+.myOrderCard {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.myOrderCardContent {
+  padding: 1rem 1.25rem;
+}
+
+.myOrderTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.myOrderDayTitle {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.myOrderDateSpan {
+  font-weight: 400;
+  color: #64748b;
+  font-size: 0.8rem;
+  margin-left: 8px;
+}
+
+.myOrderSubtext {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 2px 0 0;
+}
+
+.prebookedSpan {
+  margin-left: 6px;
+  color: #6366f1;
+  font-weight: 600;
+}
+
+.myOrderBadgesGroup {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.myOrderItemsBox {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 0.625rem 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.myOrderItemRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #374151;
+  padding: 3px 0;
+}
+
+.myOrderItemName {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.myOrderItemQty {
+  color: #94a3b8;
+}
+
+.myOrderItemPrice {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.myOrderNotes {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.myOrderActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btnCancelOrder {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.375rem 0.875rem;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  background: #fee2e2;
+  color: #dc2626;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.btnPayNow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.375rem 0.875rem;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.statusVerificationText {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #d97706;
+  font-weight: 600;
+}
+
+.statusConfirmedText {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #059669;
+  font-weight: 600;
+}
+
+/* Admin Section */
+.adminStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.adminFilterBar {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 0.875rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.adminFilterLabel {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.adminFilterValue {
+  font-size: 0.9rem;
+  color: #1e293b;
+  margin: 2px 0 0;
+  font-weight: 800;
+}
+
+.adminFilterControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.adminDateInput {
+  padding: 0.5rem 0.75rem;
+  border-radius: 9px;
+  border: 1.5px solid #e2e8f0;
+  color: #1e293b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  outline: none;
+  background: #ffffff;
+}
+
+.btnToday {
+  padding: 0.5rem 0.875rem;
+  border-radius: 9px;
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  color: #6366f1;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btnAllDates {
+  padding: 0.5rem 0.875rem;
+  border-radius: 9px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.adminStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.875rem;
+}
+
+.statCard {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.statIconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statVal {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin: 3px 0 0;
+  font-weight: 500;
+}
+
+/* Modals */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  padding: 1rem;
+}
+
+.modalContent {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.75rem;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.modalHeaderTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modalTitle {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.modalCloseBtn {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.amountBox {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #6ee7b7;
+}
+
+.amountLabel {
+  font-size: 0.72rem;
+  color: #065f46;
+  font-weight: 600;
+  margin: 0;
+}
+
+.amountVal {
+  font-weight: 900;
+  font-size: 1.75rem;
+  color: #059669;
+  margin: 2px 0 0;
+  line-height: 1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formLabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.formSelect {
+  width: 100%;
+  padding: 0.6rem 0.875rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  outline: none;
+  background: #ffffff;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.6rem 0.875rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  outline: none;
+  box-sizing: border-box;
+  color: #1e293b;
+}
+
+.proofToggleGroup {
+  display: flex;
+  gap: 4px;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 3px;
+  border: 1px solid #e2e8f0;
+}
+
+.proofToggleBtn {
+  flex: 1;
+  padding: 0.45rem 0.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.78rem;
+  transition: all 0.15s ease;
+}
+
+.fileInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1.5px dashed #c7d2fe;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  background: #f5f3ff;
+  cursor: pointer;
+}
+
+.screenshotPreview {
+  margin-top: 8px;
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.modalFooter {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.btnModalCancel {
+  padding: 0.6rem 1.25rem;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btnModalSubmit {
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}

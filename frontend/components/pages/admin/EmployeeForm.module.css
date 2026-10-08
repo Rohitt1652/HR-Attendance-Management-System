@@ -1,0 +1,405 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  color: #6b7280;
+}
+
+.loadingIcon {
+  margin-right: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.backButton {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.pageTitle {
+  margin: 0;
+  color: #111827;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.pageSubtitle {
+  margin: 2px 0 0;
+  color: #6b7280;
+  font-size: 0.72rem;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.5rem;
+  color: #fff;
+  background: #4f46e5;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all 0.15s;
+}
+
+.saveButton:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+.formLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.card {
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 4px 8px rgba(0, 0, 0, 0.02);
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.sectionIcon {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--section-color) 6%, transparent);
+  border-radius: 7px;
+}
+
+.sectionTitle {
+  color: #111827;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.twoColumnGrid,
+.threeColumnGrid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.twoColumnGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.threeColumnGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fieldLabel {
+  display: block;
+  margin-bottom: 4px;
+  color: #6b7280;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fieldIcon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  color: #9ca3af;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  color: #111827;
+  background: #fafbfc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.82rem;
+  transition: all 0.15s;
+}
+
+.input:focus {
+  background: #fff;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.06);
+}
+
+.input:disabled {
+  opacity: 0.6;
+}
+
+.inputWithIcon {
+  padding-left: 2rem;
+}
+
+.photoUpload {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: #6b7280;
+  background: #fafbfc;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.employeeIdInput {
+  flex: 1;
+  color: #4f46e5;
+  font-family: monospace;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.suggestButton {
+  padding: 0.5rem 0.625rem;
+  color: #1d4ed8;
+  white-space: nowrap;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.fieldHint {
+  margin-top: 3px;
+  color: #6b7280;
+  font-size: 0.6rem;
+}
+
+.netSalary {
+  padding: 0.55rem 0.75rem;
+  color: #9ca3af;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.netSalaryPositive {
+  color: #16a34a;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.sidebar {
+  position: sticky;
+  top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profileCard {
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.avatar {
+  display: flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(135deg, var(--role-color), color-mix(in srgb, var(--role-color) 50%, transparent));
+  border-radius: 50%;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--role-color) 19%, transparent);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileName {
+  margin: 0 0 2px;
+  color: #111827;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.profileDesignation {
+  margin: 0 0 0.5rem;
+  color: #6b7280;
+  font-size: 0.72rem;
+}
+
+.roleBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 3px 10px;
+  background: color-mix(in srgb, var(--role-color) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--role-color) 15%, transparent);
+  border-radius: 20px;
+}
+
+.roleDot {
+  width: 6px;
+  height: 6px;
+  background: var(--role-color);
+  border-radius: 50%;
+}
+
+.roleLabel {
+  color: var(--role-color);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.progressLabel {
+  color: #4b5563;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.progressValue {
+  color: #6366f1;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.progressTrack {
+  height: 4px;
+  overflow: hidden;
+  background: #f3f4f6;
+  border-radius: 2px;
+}
+
+.progressBar {
+  height: 100%;
+  background: #6366f1;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.completeText {
+  color: #16a34a;
+}
+
+.completeBar {
+  background: #16a34a;
+}
+
+.infoLabel {
+  color: #6b7280;
+  font-size: 0.7rem;
+}
+
+.infoValue {
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.reportsLabel {
+  margin: 0 0 6px;
+  color: #6b7280;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.reportsName {
+  margin: 0;
+  color: #111827;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.reportsDepartment {
+  margin: 2px 0 0;
+  color: #6b7280;
+  font-size: 0.65rem;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 800px) {
+  .formLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .twoColumnGrid,
+  .threeColumnGrid {
+    grid-template-columns: 1fr;
+  }
+}

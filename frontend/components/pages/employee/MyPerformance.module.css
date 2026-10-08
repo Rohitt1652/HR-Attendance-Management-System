@@ -1,0 +1,47 @@
+.page { gap: 1.5rem; }
+.loading { padding: 2rem; }
+.title { color: #1e293b; font-size: 1.25rem; font-weight: 800; }
+.subtitle { margin-top: 4px; color: #94a3b8; font-size: 0.8rem; }
+.empty { padding: 3rem; text-align: center; box-shadow: none; }
+.emptyIcon { margin-bottom: 0.5rem; font-size: 2rem; }
+.layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 1.5rem; }
+.reviewList, .detail { display: flex; flex-direction: column; }
+.reviewList { gap: 0.625rem; }
+.detail { gap: 1rem; }
+.reviewCard { border: 2px solid #e2e8f0; background: #fff; box-shadow: none; cursor: pointer; transition: all 0.15s; }
+.selectedReview { border-color: var(--grade-color); background: color-mix(in srgb, var(--grade-color) 6%, white); }
+.reviewHeader, .scoreHeader, .detailHeaderContent, .ratingHeader { display: flex; justify-content: space-between; }
+.reviewHeader { align-items: flex-start; margin-bottom: 0.625rem; }
+.reviewPeriod { color: #1e293b; font-size: 0.875rem; font-weight: 700; }
+.reviewer { margin-top: 2px; color: #94a3b8; font-size: 0.72rem; }
+.gradeBadge { padding: 4px 12px; border-radius: 20px; background: color-mix(in srgb, var(--grade-color) 12%, transparent); color: var(--grade-color); font-size: 0.875rem; font-weight: 800; }
+.scoreHeader { margin-bottom: 4px; }
+.scoreLabel { color: #64748b; font-size: 0.72rem; }
+.scoreValue { color: var(--grade-color); font-size: 0.72rem; font-weight: 700; }
+.progressTrack { height: 6px; overflow: hidden; border-radius: 3px; background: #e2e8f0; }
+.progressFill { width: var(--progress); height: 100%; border-radius: 3px; background: var(--grade-color); transition: width 0.5s; }
+.detailHeader { padding: 1.5rem; border: 1px solid color-mix(in srgb, var(--grade-color) 19%, transparent); border-radius: 8px; background: linear-gradient(135deg, color-mix(in srgb, var(--grade-color) 12%, transparent), #fff); }
+.detailHeaderContent { align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+.detailTitle { color: #1e293b; font-size: 1.1rem; font-weight: 800; }
+.detailReviewer { margin-top: 4px; color: #64748b; font-size: 0.78rem; }
+.gradeSummary { text-align: center; }
+.largeGrade { color: var(--grade-color); font-size: 3rem; font-weight: 900; line-height: 1; }
+.overall { color: #64748b; font-size: 0.75rem; }
+.twoColumn, .feedbackGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.panel { border-radius: 8px; box-shadow: none; }
+.panelTitle { margin-bottom: 0.875rem; color: #1e293b; font-size: 0.85rem; font-weight: 700; }
+.rating { margin-bottom: 0.625rem; }
+.ratingHeader { margin-bottom: 3px; }
+.ratingLabel { color: #374151; font-size: 0.72rem; }
+.ratingValue { color: #1e293b; font-size: 0.72rem; font-weight: 700; }
+.ratingTrack { height: 5px; }
+.feedbackCard { padding: 1rem; border: 1px solid var(--feedback-border); border-radius: 8px; background: var(--feedback-bg); }
+.feedbackTitle { margin-bottom: 0.5rem; color: var(--feedback-color); font-size: 0.78rem; font-weight: 700; }
+.feedbackContent { color: #374151; font-size: 0.8rem; line-height: 1.6; white-space: pre-wrap; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .reviewList { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+}
+@media (max-width: 640px) {
+  .twoColumn, .feedbackGrid { grid-template-columns: 1fr; }
+}

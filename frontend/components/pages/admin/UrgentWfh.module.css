@@ -1,0 +1,52 @@
+.wfhButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: .5rem 1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, .25);
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.modalBackdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(15, 23, 42, .5);
+}
+
+.wfhModal {
+  display: flex;
+  width: 100%;
+  max-width: 460px;
+  flex-direction: column;
+  gap: .65rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, .25);
+}
+
+.modalHeader { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: .35rem; }
+.modalTitle { margin: 0; color: #0f172a; font-size: 1.05rem; font-weight: 800; }
+.modalSubtitle { margin: 4px 0 0; color: #64748b; font-size: .78rem; }
+.dateGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.iconButton { display: flex; padding: 2px; color: #94a3b8; background: none; border: 0; cursor: pointer; }
+.reasonInput { width: 100%; padding: .7rem .8rem; color: #0f172a; background: #fff; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; resize: vertical; font: inherit; font-size: .85rem; }
+.reasonInput:focus { border-color: #0284c7; box-shadow: 0 0 0 3px rgba(2, 132, 199, .12); }
+.modalActions { display: flex; justify-content: flex-end; gap: .65rem; margin-top: .5rem; }
+.wfhSubmit { padding: .6rem 1rem; color: #fff; background: #0284c7; border: 0; border-radius: 8px; cursor: pointer; font-weight: 700; }
+.wfhSubmit:disabled { cursor: not-allowed; opacity: .65; }
+
+@media (max-width: 520px) {
+  .dateGrid { grid-template-columns: 1fr; }
+}

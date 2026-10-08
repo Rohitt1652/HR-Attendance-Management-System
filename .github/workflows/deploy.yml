@@ -1,0 +1,120 @@
+name: Deploy WorkforceOS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare deployment package
+        run: |
+          mkdir -p deploy
+
+          rsync -av \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='backend/.env' \
+            --exclude='backend/uploads/' \
+            --exclude='frontend/.env.local' \
+            --exclude='backend/*.log' \
+            --exclude='*.log' \
+            backend/ deploy/backend/
+
+          rsync -av \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='frontend/.env.local' \
+            --exclude='*.log' \
+            frontend/ deploy/frontend/
+
+      - name: Upload application to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: "deploy/*"
+          target: "/home/workforceos/htdocs/app/"
+          strip_components: 1
+
+      - name: Install dependencies and build
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            set -e
+
+            export NVM_DIR="$HOME/.nvm"
+
+            if [ -s "$NVM_DIR/nvm.sh" ]; then
+              source "$NVM_DIR/nvm.sh"
+            else
+              echo "ERROR: NVM not found at $NVM_DIR"
+              exit 1
+            fi
+
+            nvm use 22
+
+            echo "Node version: $(node -v)"
+            echo "NPM version: $(npm -v)"
+
+            APP="/home/workforceos/htdocs/app"
+
+            echo "======================================"
+            echo "Starting deployment"
+            echo "======================================"
+
+            echo "Checking production files..."
+
+            if [ ! -f "$APP/backend/.env" ]; then
+              echo "ERROR: backend/.env is missing"
+              exit 1
+            fi
+
+            if [ ! -f "$APP/frontend/.env.local" ]; then
+              echo "ERROR: frontend/.env.local is missing"
+              exit 1
+            fi
+
+            if [ ! -d "$APP/backend/uploads" ]; then
+              echo "ERROR: backend/uploads directory is missing"
+              exit 1
+            fi
+
+            echo "Production files confirmed."
+
+            echo "Installing backend dependencies..."
+            cd "$APP/backend"
+            npm ci
+
+            echo "Installing frontend dependencies..."
+            cd "$APP/frontend"
+            npm ci
+
+            echo "Building frontend..."
+            npm run build
+
+            echo "Frontend build successful."
+
+            echo "Restarting backend..."
+            pm2 restart workforceos-backend
+
+            echo "Restarting frontend..."
+            pm2 restart workforceos-frontend
+
+            echo "Saving PM2 process list..."
+            pm2 save
+
+            echo "======================================"
+            echo "Deployment completed successfully"
+            echo "======================================"

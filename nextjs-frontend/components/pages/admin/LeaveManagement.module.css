@@ -1,0 +1,202 @@
+/* LeaveManagement.module.css */
+
+.pageHeaderTitle {
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.pageHeaderSubtitle {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  margin-top: 3px;
+}
+
+/* Stats Cards Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.125rem;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.statHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Hierarchy Banners */
+.bannerTeamLead {
+  background: #eff6ff;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #bfdbfe;
+  font-size: 0.8rem;
+  color: #1d4ed8;
+}
+
+.bannerHr {
+  background: #f0fdf4;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #bbf7d0;
+  font-size: 0.8rem;
+  color: #166534;
+}
+
+/* Filter Card */
+.filterCard {
+  padding: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.empSearchContainer {
+  position: relative;
+  min-width: 200px;
+}
+
+.clearSearchBtn {
+  position: absolute;
+  right: 8px;
+  top: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+.dropdownList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 2px;
+}
+
+.dropdownItem {
+  padding: 0.625rem 0.875rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s ease;
+}
+
+.dropdownItem:hover {
+  background: #f8fafc;
+}
+
+.avatarBox {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.72rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* Table Shell & Pagination */
+.tableShell {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-top: 1rem;
+}
+
+.paginationRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.pageBtn {
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+.pageBtn:disabled {
+  background: #f8fafc;
+  cursor: not-allowed;
+}
+
+.pageText {
+  font-size: 0.8rem;
+  color: #64748b;
+}

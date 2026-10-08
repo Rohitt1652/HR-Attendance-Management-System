@@ -1,0 +1,13 @@
+import api from './axios';
+export const checkIn = () => api.post('/attendance/checkin');
+export const checkOut = () => api.post('/attendance/checkout');
+export const getMyAttendance = (params) => api.get('/attendance/my', { params });
+export const getMyDashboardSummary = () => api.get('/attendance/my-dashboard-summary');
+export const getAllAttendance = (params) => api.get('/attendance', { params });
+export const assignWfh = (data) => api.post('/attendance/wfh', data);
+export const previewAttendanceUpload = (formData) => api.post('/attendance/bulk-upload/preview', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+export const confirmAttendanceImport = (rows) => api.post('/attendance/bulk-upload/confirm', { rows });
+export const deleteAttendance = (id) => api.delete(`/attendance/${id}`);
+export const bulkUploadAttendance = previewAttendanceUpload;
+export const getDashboard = () => api.get('/attendance/dashboard');
+export const getAttendanceReconciliation = (params) => api.get('/attendance/reconciliation', { params });

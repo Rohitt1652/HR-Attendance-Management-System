@@ -1,0 +1,338 @@
+/* LeaveAllocationPage.module.css */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.headerActions {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.btnReset {
+  padding: 0.5rem 1rem;
+  background: #f1f5f9;
+  color: #374151;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btnSave {
+  padding: 0.5rem 1.25rem;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Role Selector Grid */
+.rolesGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+  .rolesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .rolesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roleCard {
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.roleIcon {
+  font-size: 1.5rem;
+  margin-bottom: 0.375rem;
+}
+
+.roleLabel {
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.roleTotalSub {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+/* Editor Container */
+.editorCard {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.editorHeader {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editorRoleIconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.editorRoleTitle {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.editorRoleSub {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 2px 0 0;
+}
+
+.unsavedBadge {
+  font-size: 0.75rem;
+  background: #fef9c3;
+  color: #854d0e;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.leaveRowsStack {
+  padding: 1rem;
+}
+
+.leaveRow {
+  display: grid;
+  grid-template-columns: 200px 1fr 140px;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.875rem 0.5rem;
+  border-bottom: 1px solid #f8fafc;
+}
+
+@media (max-width: 768px) {
+  .leaveRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.leaveIconBox {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.leaveDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.leaveName {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.badgeStack {
+  display: flex;
+  gap: 0.375rem;
+  margin-top: 2px;
+}
+
+.codeBadge {
+  font-size: 0.62rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.tagHourly {
+  font-size: 0.6rem;
+  background: #eff6ff;
+  color: #3b82f6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.tagHalfDay {
+  font-size: 0.6rem;
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.barTrack {
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.2s ease;
+}
+
+.barHint {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 3px;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.stepBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.numInput {
+  width: 56px;
+  padding: 0.375rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+}
+
+.unitText {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.editorFooter {
+  padding: 1rem 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerTotalText {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+/* Comparison Table */
+.comparisonCard {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.comparisonHeader {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.comparisonTitle {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.comparisonSubtitle {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.th {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.td {
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.valPill {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}

@@ -1,0 +1,1 @@
+.full{width:var(--sidebar-width-full)}.mini{width:var(--sidebar-width-mini)}.logoImageWrap{display:flex;flex-direction:column;gap:3px}.logoImage{width:100%;max-width:140px;height:auto;object-fit:contain}.spacedGroup{margin-top:.5rem}.chevron{transition:transform .2s ease}.chevronCollapsed{transform:rotate(-90deg)}.itemsCollapsed{max-height:0}.itemsExpanded{max-height:1000px}

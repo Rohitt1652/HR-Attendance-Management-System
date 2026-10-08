@@ -1,0 +1,5 @@
+# Optional — set your backend URL here (one line, no /api suffix).
+# Upload this file via FTP if frontend and backend are on different servers.
+# Example: https://attendance-portal-yvhf.onrender.com
+#
+# Leave as-is if both apps run on the same server (uses http://127.0.0.1:5000).

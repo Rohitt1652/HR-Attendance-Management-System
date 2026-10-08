@@ -1,0 +1,508 @@
+.modal {
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  padding: 1.5rem;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 15%);
+}
+
+.modalCompact { max-width: 420px; }
+
+.actionButton {
+  padding: 0.5rem 1.25rem;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.actionButton:disabled { cursor: not-allowed; opacity: 0.7; }
+.saveButton { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+.approveButton { background: #22c55e; }
+.rejectButton { background: #ef4444; }
+
+.colorBadge {
+  --badge-color: #94a3b8;
+  padding: 2px 8px;
+  border: 1px solid color-mix(in srgb, var(--badge-color) 19%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--badge-color) 10%, transparent);
+  color: var(--badge-color);
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
+.colorBadge[data-category="Maintenance"],
+.colorBadge[data-priority="Medium"],
+.colorBadge[data-expense-status="Pending"] { --badge-color: #f59e0b; }
+.colorBadge[data-category="Cleaning"],
+.colorBadge[data-priority="Low"],
+.colorBadge[data-expense-status="Approved"] { --badge-color: #22c55e; }
+.colorBadge[data-category="Security"],
+.colorBadge[data-priority="Urgent"],
+.colorBadge[data-expense-status="Rejected"] { --badge-color: #ef4444; }
+.colorBadge[data-category="IT Support"] { --badge-color: #6366f1; }
+.colorBadge[data-category="Plumbing"] { --badge-color: #0ea5e9; }
+.colorBadge[data-category="Electrical"],
+.colorBadge[data-priority="High"] { --badge-color: #f97316; }
+.colorBadge[data-category="Carpentry"] { --badge-color: #84cc16; }
+.colorBadge[data-category="Pest Control"] { --badge-color: #8b5cf6; }
+.colorBadge[data-category="Renovation"] { --badge-color: #ec4899; }
+.colorBadge[data-category="Procurement"] { --badge-color: #64748b; }
+
+.dueDate { gap: 3px; color: #64748b; font-weight: 400; }
+.dueDate.overdue { color: #ef4444; font-weight: 700; }
+
+.expensePanel {
+  --expense-color: #94a3b8;
+  padding: 0.5rem 0.625rem;
+  border: 1px solid color-mix(in srgb, var(--expense-color) 19%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--expense-color) 5%, transparent);
+}
+.expensePanel[data-expense-status="Pending"] { --expense-color: #f59e0b; }
+.expensePanel[data-expense-status="Approved"] { --expense-color: #22c55e; }
+.expensePanel[data-expense-status="Rejected"] { --expense-color: #ef4444; }
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #f1f5f9;
+}
+.statIcon[data-label="Total Tasks"] { background: #eef2ff; }
+.statIcon[data-label="Open / In Progress"] { background: #fffbeb; }
+.statIcon[data-label="Completed"] { background: #f0fdf4; }
+.statIcon[data-label="Pending Expense"] { background: #fef2f2; }
+
+.statValue { color: #64748b; font-size: 1.75rem; }
+.statValue[data-label="Total Tasks"] { color: #6366f1; }
+.statValue[data-label="Open / In Progress"] { color: #f59e0b; }
+.statValue[data-label="Completed"] { color: #22c55e; }
+.statValue[data-label="Pending Expense"] { color: #ef4444; }
+
+.tabButton {
+  gap: 0.4rem;
+  padding: 0.5rem 1.125rem;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.tabButton.active { background: #6366f1; color: #fff; font-weight: 700; }
+.tabCount {
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: #e2e8f0;
+  color: #64748b;
+  font-size: 0.7rem;
+}
+.active .tabCount { background: rgb(255 255 255 / 25%); color: #fff; }
+
+.modalHeader {
+  margin-bottom: 1.25rem;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.modalClose {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.twoColumnGrid {
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.fullWidthField {
+  grid-column: 1/-1;
+}
+
+.vendorSection {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 0.75rem;
+}
+
+.vendorHeading {
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.06em;
+}
+
+.vendorGrid {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.formActions {
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.cancelButton {
+  padding: 0.5rem 1rem;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.taskSummary {
+  background: #f8fafc;
+  padding: 0.75rem;
+}
+
+.flushText {
+  margin: 0;
+}
+
+.fileInput {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.fileList {
+  margin-top: 6px;
+  gap: 6px;
+}
+
+.fileChip {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid #bfdbfe;
+}
+
+.approvalNotice {
+  background: #f0fdf4;
+  padding: 1rem;
+  border: 1px solid #bbf7d0;
+}
+
+.approvalNoticeText {
+  color: #166534;
+  margin: 0;
+}
+
+.dialogActions {
+  justify-content: flex-end;
+}
+
+.rejectionNotice {
+  background: #fef2f2;
+  padding: 0.75rem;
+  border: 1px solid #fecaca;
+}
+
+.rejectionNoticeText {
+  color: #991b1b;
+  margin: 0;
+}
+
+.taskCard {
+  border-radius: 14px;
+  padding: 1.125rem 1.25rem;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  gap: 0.625rem;
+  transition: box-shadow 0.15s;
+}
+
+.taskCard:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
+}
+
+.taskCardHeader {
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.taskTitle {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.taskBadges {
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.linkedExpenseBadge {
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.68rem;
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  white-space: nowrap;
+}
+
+.metadataItem {
+  gap: 4px;
+}
+
+.assignmentItem {
+  gap: 4px;
+  color: #6366f1;
+}
+
+.taskDescription {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.compactMetadataItem {
+  gap: 3px;
+}
+
+.completedMetadataItem {
+  gap: 3px;
+  color: #22c55e;
+}
+
+.overdueBadge {
+  margin-left: 4px;
+  background: #fee2e2;
+  color: #ef4444;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 0.65rem;
+}
+
+.vendorDetails {
+  background: #f8fafc;
+  padding: 0.5rem 0.625rem;
+}
+
+.expenseLink {
+  gap: 3px;
+  color: #6366f1;
+}
+
+.expenseLinkBadge {
+  background: #eff6ff;
+  padding: 1px 7px;
+  border-radius: 10px;
+  border: 1px solid #bfdbfe;
+}
+
+.expenseCategory {
+  margin-left: 4px;
+}
+
+.rejectionReason {
+  color: #ef4444;
+  margin: 4px 0 0;
+}
+
+.expenseReviewActions {
+  margin-top: 0.5rem;
+}
+
+.approveExpenseButton {
+  flex: 1;
+  padding: 4px 0;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: #166534;
+}
+
+.rejectExpenseButton {
+  flex: 1;
+  padding: 4px 0;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: #991b1b;
+}
+
+.taskActions {
+  gap: 0.375rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 0.625rem;
+}
+
+.startTaskButton {
+  padding: 4px 10px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: #1d4ed8;
+}
+
+.completeTaskButton {
+  padding: 4px 10px;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: #166534;
+}
+
+.expenseButton {
+  padding: 4px 10px;
+  background: #fefce8;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: #92400e;
+}
+
+.editTaskButton {
+  padding: 4px 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: #374151;
+  gap: 3px;
+}
+
+.deleteTaskButton {
+  padding: 4px 10px;
+  background: #fee2e2;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: #991b1b;
+  gap: 3px;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pageHeader {
+  margin-bottom: 1.5rem;
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+}
+
+.pageSubtitle {
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0;
+}
+
+.createTaskButton {
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+}
+
+.statsGrid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.statCard {
+  padding: 1.25rem;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  gap: 1rem;
+}
+
+.statLabel {
+  margin-top: 3px;
+}
+
+.tabs {
+  gap: 4px;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+  width: fit-content;
+  margin-bottom: 1.25rem;
+}
+
+.filters {
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.clearFiltersButton {
+  padding: 0.45rem 0.75rem;
+  background: #fee2e2;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  color: #991b1b;
+  gap: 3px;
+}
+
+.resultCount {
+  margin-left: auto;
+}
+
+.loadingState {
+  text-align: center;
+  padding: 4rem;
+  font-size: 0.875rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem;
+  border: 1px solid #f1f5f9;
+}
+
+.emptyStateIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: #eff6ff;
+  margin: 0 auto 1rem;
+}
+
+.emptyStateTitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.emptyStateText {
+  font-size: 0.875rem;
+}
+
+.emptyStateButton {
+  margin-top: 1rem;
+  padding: 0.625rem 1.5rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 10px;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.taskGrid {
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1rem;
+}
+
+.label { display: block; margin-bottom: 4px; color: #374151; font-size: 0.72rem; font-weight: 600; }
+.input, .select { box-sizing: border-box; width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #e2e8f0; border-radius: 8px; outline: none; font-size: 0.82rem; }
+.input:focus, .select:focus { border-color: #6366f1; box-shadow: 0 0 0 3px rgb(99 102 241 / 12%); }
+.textarea { resize: vertical; }
