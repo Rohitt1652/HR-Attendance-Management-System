@@ -73,7 +73,7 @@ export default function LoginPage() {
       toast.success(`Welcome back, ${user.name?.split(' ')[0]}!`);
       router.push(MANAGER_ROLES.includes(user.role) ? '/admin/dashboard' : '/employee/dashboard');
     } catch (err) {
-      const msg = err.response?.data?.message || 'Invalid credentials';
+      const msg = err.response?.data?.message || (err.response ? 'Invalid credentials' : (err.message || 'Unable to connect to server'));
       // Show inline error under the identifier field for auth failures
       setErrors(prev => ({ ...prev, email: msg }));
     } finally {

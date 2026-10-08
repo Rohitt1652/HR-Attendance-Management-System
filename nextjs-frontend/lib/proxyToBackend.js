@@ -1,7 +1,7 @@
 import { getBackendBaseUrl } from './backendUrl';
 
 const FORWARD_REQUEST_HEADERS = ['authorization', 'content-type', 'accept', 'cookie'];
-const FORWARD_RESPONSE_HEADERS = ['content-type', 'content-disposition', 'content-length', 'cache-control'];
+const FORWARD_RESPONSE_HEADERS = ['content-type', 'content-disposition', 'cache-control'];
 
 function buildForwardHeaders(request) {
   const headers = new Headers();
